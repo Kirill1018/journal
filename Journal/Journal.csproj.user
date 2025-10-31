@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Addition.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CreatGroup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EdGroup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Editing.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EdStudList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Error.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Feedback.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Magazine.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Target.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Task.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Work.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Addition.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CreatGroup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EdGroup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Editing.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EdStudList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Error.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Magazine.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

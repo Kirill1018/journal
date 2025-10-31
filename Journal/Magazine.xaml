@@ -1,0 +1,63 @@
+﻿<Page x:Class="Journal.Magazine"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Journal"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Magazine">
+    <TabControl>
+        <TabItem>
+            <TabItem.Header>
+                <TextBlock>предметы</TextBlock>
+            </TabItem.Header>
+            <TabItem.Content>
+                <StackPanel>
+                    <DataGrid x:Name="studSubj"></DataGrid>
+                    <Button Click="OnClickAddNewSubj">добавить новый предмет</Button>
+                    <Button Click="OnClickEdChosSubj">редактировать выбранный предмет</Button>
+                    <Button Click="OnClickTranslChosSubjToArchStat">перевести выбранный предмет в архивный статус</Button>
+                </StackPanel>
+            </TabItem.Content>
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <TextBlock>группы</TextBlock>
+            </TabItem.Header>
+            <TabItem.Content>
+                <StackPanel>
+                    <TextBlock>актуальные группы</TextBlock>
+                    <ListView x:Name="actGroups"></ListView>
+                    <TextBlock>остальные группы</TextBlock>
+                    <ItemsControl x:Name="othGroups"></ItemsControl>
+                    <Button Click="OnClickCreatGroup">создать группу</Button>
+                    <Button Click="OnClickEdChosGroup">редактировать выбранную группу</Button>
+                    <Button Click="OnClickEdListOfStudOfChosGroup">редактировать список студентов выбранной группы</Button>
+                    <Button Click="OnClickChangStatOfChosGroupToArchOne">изменить статус выбранной группы на архивный</Button>
+                </StackPanel>
+            </TabItem.Content>
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <TextBlock>уроки</TextBlock>
+            </TabItem.Header>
+            <TabItem.Content>
+                <StackPanel x:Name="panel"></StackPanel>
+            </TabItem.Content>
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <TextBlock>домашние задания</TextBlock>
+            </TabItem.Header>
+            <TabItem.Content>
+                <StackPanel>
+                    <DataGrid x:Name="homeTasks"></DataGrid>
+                    <Button Click="OnClickCheckChosWork">проверить выбранную работу</Button>
+                    <Button Click="OnClickLookAtTaskForChosWork">посмотреть задание к выбранной работе</Button>
+                    <Button Click="OnClickEvChosWork">оценить выбранную работу</Button>
+                </StackPanel>
+            </TabItem.Content>
+        </TabItem>
+    </TabControl>
+</Page>

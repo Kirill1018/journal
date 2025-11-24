@@ -18,7 +18,7 @@ namespace Journal
         {
             InitializeComponent();
             this.Identifier = identifier;
-            IDataSourc.Load(this);
+            Header.Load(this);
         }
         
         private void OnClickAddNewSubj(object sender, RoutedEventArgs e)
@@ -58,7 +58,7 @@ namespace Journal
             sql = $"update passSubj set isArch = 'true' where Id = {id}";
             SqlCommand sqlCommand = new SqlCommand(sql, SqlConnection);
             await sqlCommand.ExecuteNonQueryAsync();
-            IDataSourc.Load(this);
+            Header.Load(this);
         }
 
         private void OnClickCreatGroup(object sender, RoutedEventArgs e)
@@ -98,7 +98,7 @@ namespace Journal
             string sql = $"update groups set isArch = 'true' where Id = ({Header.SelFromGroupsWhereIsArchIsFalseAndNameIs(group!)})";
             SqlCommand sqlCommand = new SqlCommand(sql, SqlConnection);
             await sqlCommand.ExecuteNonQueryAsync();
-            IDataSourc.Load(this);
+            Header.Load(this);
         }
 
         private void OnClickCheckChosWork(object sender, RoutedEventArgs e)
@@ -115,13 +115,8 @@ namespace Journal
                 {
                     SaveFileDialog sfd = new SaveFileDialog();
                     sfd.FileName = homework.GetLodgeName();
-                    if (sfd.ShowDialog() == true)
-                    {
-                        FileStream fstream = new FileStream(sfd.FileName!, FileMode.OpenOrCreate);
-                        byte[] buffer = homework.GetBinFile()!;
-                        fstream.Write(buffer, 0,
-                            buffer.Length);
-                    }
+                    if (sfd.ShowDialog() == true) File.WriteAllBytes(sfd
+                        .FileName!, homework.GetBinFile()!);
                 }
             }
             catch (NullReferenceException) { }

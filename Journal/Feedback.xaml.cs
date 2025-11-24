@@ -23,8 +23,8 @@ namespace Journal
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             string remText = remark.Text, emptyString = string.Empty,
-                subQuery = IDataSourc.SelFromCheck(this.Homework
-                .GetUserId(), this.Homework.GetHomId()), sql = $"update checking set comment = '{remText}' where Id = ({subQuery})",
+                subQuery = $"select Id from checking where userId = {this.Homework.GetUserId()} and homId = {this
+                .Homework.GetHomId()}", sql = $"update checking set comment = '{remText}' where Id = ({subQuery})",
                 markText = assessment.Text;
             bool isRemFill = true, isMarkFill = true;
             SqlConnection sqlConnection = Header.SqlConnection;
@@ -38,7 +38,7 @@ namespace Journal
                 sqlCommand = new SqlCommand(sql, sqlConnection);
                 await sqlCommand.ExecuteNonQueryAsync();
             }
-            IDataSourc.Load(this.Magazine);
+            Header.Load(this.Magazine);
             Close();
         }
     }

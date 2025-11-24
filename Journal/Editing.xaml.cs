@@ -52,7 +52,7 @@ namespace Journal
                 SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
                 await sqlCommand.ExecuteNonQueryAsync();
             }
-            IDataSourc.Load(this.Magazine);
+            Header.Load(this.Magazine);
             Close();
         }
     }
